@@ -15,9 +15,9 @@ window.App = (() => {
     const [user, setUser] = useState(null);
 
     // Core inputs
-    const [propertyPrice, setPropertyPrice] = useState(250000);
-    const [interestRate, setInterestRate] = useState(4.5);
-    const [mortgageTerm, setMortgageTerm] = useState(25);
+    const [propertyPrice, setPropertyPrice] = useState(750000);
+    const [interestRate, setInterestRate] = useState(4.0);
+    const [mortgageTerm, setMortgageTerm] = useState(27);
     const [isFirstTimeBuyer, setIsFirstTimeBuyer] = useState(false);
 
     // Current property
@@ -29,7 +29,7 @@ window.App = (() => {
     const [removalCosts, setRemovalCosts] = useState(800);
 
     // Savings
-    const [currentSavings, setCurrentSavings] = useState(30000);
+    const [currentSavings, setCurrentSavings] = useState(100000);
 
     // Results
     const [results, setResults] = useState({
@@ -433,7 +433,7 @@ window.App = (() => {
           </div>
 
           <div className="mt-6 text-center text-gray-600 text-sm">
-            <p>This calculator is for illustration purposes only. Consult with a financial advisor for personalized advice.</p>
+            <p>This calculator is for illustration purposes only. Consult with a financial advisor for personalised advice.</p>
           </div>
         </div>
       </div>
