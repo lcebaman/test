@@ -219,7 +219,7 @@ window.App = (() => {
                 <h1 className="text-3xl md:text-4xl font-bold text-white">Property Move Calculator</h1>
               </div>
               <p className="text-blue-100">
-                Sale proceeds, Buying &amp; Selling costs (single “Agency Fee”), LBTT auto-calc &amp; mortgage
+                Sale proceeds, Buying &amp; Selling costs
               </p>
             </div>
 
@@ -414,10 +414,10 @@ window.App = (() => {
                   </div>
                 </div>
 
-                {results.depositAvailable > 0 && (
+                {results.loanAmount < 550000 && (
                   <div className="bg-green-50 rounded-lg p-6 border-2 border-green-200">
                     <h3 className="font-semibold text-xl mb-2 text-green-700">✓ Ready to Proceed!</h3>
-                    <p className="text-gray-700 mb-2">You have sufficient funds for this purchase.</p>
+                   <p className="text-gray-700 mb-2">You have sufficient funds for this purchase.</p>
                     {results.depositAvailable > results.buyingCosts && (
                       <p className="text-sm text-gray-600">
                         Remaining after deposit &amp; costs:{" "}
