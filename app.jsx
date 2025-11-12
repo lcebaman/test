@@ -413,19 +413,37 @@ window.App = (() => {
                     <span className="font-semibold text-orange-600">{formatCurrency(results.totalInterest)}</span>
                   </div>
                 </div>
+                   {Number(results.loanAmount) < 550000 ? (
+  <div className="bg-green-50 rounded-lg p-6 border-2 border-green-200">
+    <h3 className="font-semibold text-xl mb-2 text-green-700">✓ Ready to Proceed!</h3>
+    <p className="text-gray-700 mb-2">You have sufficient funds for this purchase.</p>
 
-                {results.loanAmount < 550000 && (
-                  <div className="bg-green-50 rounded-lg p-6 border-2 border-green-200">
-                    <h3 className="font-semibold text-xl mb-2 text-green-700">✓ Ready to Proceed!</h3>
-                   <p className="text-gray-700 mb-2">You have sufficient funds for this purchase.</p>
-                    {results.depositAvailable > results.buyingCosts && (
-                      <p className="text-sm text-gray-600">
-                        Remaining after deposit &amp; costs:{" "}
-                        <span className="font-bold text-green-600">
-                          {formatCurrency(results.totalLiquidFunds - results.buyingCosts - results.loanAmount)}
-                        </span>
-                      </p>
-                    )}
+    {results.depositAvailable > results.buyingCosts && (
+      <p className="text-sm text-gray-600">
+        Remaining after deposit &amp; costs:{" "}
+        <span className="font-bold text-green-600">
+          {formatCurrency(results.totalLiquidFunds - results.buyingCosts - results.loanAmount)}
+        </span>
+      </p>
+    )}
+  </div>
+) : (
+  <div className="bg-red-50 rounded-lg p-6 border-2 border-red-300">
+    <h3 className="font-semibold text-xl mb-2 text-red-700">⚠ Monthly Cost Risk</h3>
+    <p className="text-red-800">
+      Your mortgage loan is <strong>{formatCurrency(results.loanAmount)}</strong>, which may lead to high
+      monthly payments.
+    </p>
+    <p className="text-red-800 mt-1">
+      Estimated monthly payment: <strong>{formatCurrency(results.monthlyPayment)}</strong>
+    </p>
+    <p className="text-sm text-red-700/80 mt-2">
+      Consider increasing your deposit, lowering the price, or extending the term (if suitable).
+    </p>
+  </div>
+)}
+
+
                   </div>
                 )}
               </div>
